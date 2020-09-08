@@ -9,16 +9,16 @@ use App\Models\User;
 
 class AuthServiceProvider extends ServiceProvider
 {
-    
+
     use ValidatesPermissions;
-    
+
     /**
      * The policy mappings for the application.
      *
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        //\Pktharindu\NovaPermissions\Role::class => \App\Policies\RolePolicy::class,
     ];
 
     /**
