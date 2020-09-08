@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
-
+use Pktharindu\NovaPermissions\Role;
 
 class UserSeeder extends Seeder
 {
@@ -14,10 +14,17 @@ class UserSeeder extends Seeder
     public function run()
     {
         $password = Hash::make('password');
-        User::create([
+        $user = User::create([
             'name' => 'Jorge Luis',
-            'email' => 'jorgeconsalvacion@gmail.com',
+            'email' => 'jorgeconsalvacioan@gmail.com',
             'password' => $password
         ]);
+        
+       if($user) {
+           $adminRole = Role::where('slug','administrador')->first();
+           if($adminRole) {
+               $user->assignRole($adminRole);
+           }
+       }
     }
 }
