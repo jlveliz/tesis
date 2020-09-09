@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7cbc02ff5d215106b805c70e85c06dc",
+    "content-hash": "413cb46a50af9986c5a6d94bfd413072",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1948,6 +1948,47 @@
                 "php"
             ],
             "time": "2020-08-30T16:15:20+00:00"
+        },
+        {
+            "name": "opanegro/field-nova-password-show-hide",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opanegro/field-nova-password-show-hide.git",
+                "reference": "456a5e9ed7fd828936836300db945e6d71330a87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opanegro/field-nova-password-show-hide/zipball/456a5e9ed7fd828936836300db945e6d71330a87",
+                "reference": "456a5e9ed7fd828936836300db945e6d71330a87",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Opanegro\\FieldNovaPasswordShowHide\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Opanegro\\FieldNovaPasswordShowHide\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2019-10-23T03:44:11+00:00"
         },
         {
             "name": "opis/closure",
