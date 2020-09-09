@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4b057084969ad7793c2b9d25bf5ae04",
+    "content-hash": "01d64a5a423c347e4004d73f71593984",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -57,55 +57,6 @@
                 "stack"
             ],
             "time": "2020-05-31T07:17:05+00:00"
-        },
-        {
-            "name": "benjaminhirsch/nova-slug-field",
-            "version": "1.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tomhatzer/nova-slug-field.git",
-                "reference": "207291988ea535d661e23b3f6cd33431cf9b739a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tomhatzer/nova-slug-field/zipball/207291988ea535d661e23b3f6cd33431cf9b739a",
-                "reference": "207291988ea535d661e23b3f6cd33431cf9b739a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Benjaminhirsch\\NovaSlugField\\FieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Benjaminhirsch\\NovaSlugField\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Hirsch",
-                    "email": "mail@benjaminhirsch.net",
-                    "homepage": "https://wwwbenjaminhirsch.net",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A Laravel Nova field to generate a slugs.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "time": "2019-07-05T07:23:36+00:00"
         },
         {
             "name": "brick/math",
@@ -1148,16 +1099,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.28.0",
+            "version": "v7.28.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5d3b4e3e62294716e3c810be3d2eb1375685b87d"
+                "reference": "f7493ab717ca2a9598b1db2d6a3bae8ac8c755e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5d3b4e3e62294716e3c810be3d2eb1375685b87d",
-                "reference": "5d3b4e3e62294716e3c810be3d2eb1375685b87d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f7493ab717ca2a9598b1db2d6a3bae8ac8c755e8",
+                "reference": "f7493ab717ca2a9598b1db2d6a3bae8ac8c755e8",
                 "shasum": ""
             },
             "require": {
@@ -1302,7 +1253,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-09-08T15:10:40+00:00"
+            "time": "2020-09-09T15:02:46+00:00"
         },
         {
             "name": "laravel/nova",
@@ -2360,63 +2311,6 @@
                 "x509"
             ],
             "time": "2020-09-08T04:24:43+00:00"
-        },
-        {
-            "name": "pktharindu/nova-permissions",
-            "version": "v2.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pktharindu/nova-permissions.git",
-                "reference": "897ec2d017aa01d7c08f83ba10fb730770921b8a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pktharindu/nova-permissions/zipball/897ec2d017aa01d7c08f83ba10fb730770921b8a",
-                "reference": "897ec2d017aa01d7c08f83ba10fb730770921b8a",
-                "shasum": ""
-            },
-            "require": {
-                "benjaminhirsch/nova-slug-field": "^1.2",
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Pktharindu\\NovaPermissions\\ToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Pktharindu\\NovaPermissions\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "P. K. Tharindu",
-                    "email": "pktharindu@outlook.com"
-                }
-            ],
-            "description": "Laravel Nova Grouped Permissions (ACL)",
-            "keywords": [
-                "Authentication",
-                "access control",
-                "acl",
-                "authorization",
-                "gates",
-                "laravel",
-                "nova",
-                "permissions",
-                "policies",
-                "roles",
-                "tool"
-            ],
-            "time": "2020-08-19T10:23:03+00:00"
         },
         {
             "name": "psr/container",
