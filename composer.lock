@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "413cb46a50af9986c5a6d94bfd413072",
+    "content-hash": "0163cc14043d0117fcce70004be9f487",
     "packages": [
         {
             "name": "asm89/stack-cors",

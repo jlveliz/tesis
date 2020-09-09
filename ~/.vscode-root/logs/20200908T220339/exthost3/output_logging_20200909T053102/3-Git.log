@@ -1,0 +1,31 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --git-dir
+Open repository: /var/www/php73/votaciones
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no se ha configurado upstream para la rama 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :resources/js/components/admin/voters/index.vue
+> git ls-files --stage -- /var/www/php73/votaciones/resources/js/components/admin/voters/index.vue
+> git cat-file -s d839b074b12d36264e6febb3adc931ce1ee9b741
+> git check-ignore -v -z --stdin
+> git show --textconv :resources/js/components/admin/dashboard/CardResult.vue
+> git ls-files --stage -- /var/www/php73/votaciones/resources/js/components/admin/dashboard/CardResult.vue
+> git cat-file -s 9879b1d89c70ffb241ec306748feb047d076f831
+> git show --textconv :resources/js/components/admin/voters/index.vue
+> git ls-files --stage -- /var/www/php73/votaciones/resources/js/components/admin/voters/index.vue
+> git cat-file -s d839b074b12d36264e6febb3adc931ce1ee9b741
+> git show --textconv :resources/js/app.js
+> git ls-files --stage -- /var/www/php73/votaciones/resources/js/app.js
+> git cat-file -s 9c1f19440be558a10d3ee5a0612b819e2d1a938e
