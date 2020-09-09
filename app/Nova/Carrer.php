@@ -3,21 +3,20 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Requirement extends Resource
+class Carrer extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Requirement::class;
+    public static $model = \App\Models\Carrer::class;
 
-
-    /**
+     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
@@ -30,7 +29,7 @@ class Requirement extends Resource
      * @var array
      */
     public static $search = [
-        'name', 'is_required',
+        'name',
     ];
 
     /**
@@ -43,9 +42,9 @@ class Requirement extends Resource
     {
         return [
             Text::make(__('Nombre'), 'name')->sortable()->rules('required')
-            ->creationRules('unique:requirements,name')
-            ->updateRules('unique:requirements,name,{{resourceId}}'),
-            Boolean::make(__('Es requerido'), 'is_required')->rules('required')->trueValue(1)->falseValue(0)->sortable(),
+            ->creationRules('unique:carrers,name')
+            ->updateRules('unique:carrers,name,{{resourceId}}'),
+            Text::make(__('Descripción'),'description')->hideFromIndex(),
             Boolean::make(__('Estado'), 'state')->rules('required')->trueValue(1)->falseValue(0)->sortable()->sortable()
         ];
     }
@@ -96,11 +95,11 @@ class Requirement extends Resource
 
     public static function label()
     {
-        return __('Requisitos');
+        return __('Carreras');
     }
 
     public static function singularLabel()
     {
-        return __('Requisito');   
+        return __('Carrera');   
     }
 }

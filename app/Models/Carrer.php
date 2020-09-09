@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Requirement extends Model
+class Carrer extends Model
 {
     //
 }
