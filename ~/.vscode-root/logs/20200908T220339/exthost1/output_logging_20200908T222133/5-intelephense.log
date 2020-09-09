@@ -1,0 +1,7 @@
+[Info  - 22:21:33] Initialising intelephense 1.5.4
+[Info  - 22:21:33] Initialised in 11 ms
+[Warn  - 22:21:34] file:///var/www/php73/tesis/vendor/fzaninotto/faker/src/Faker/Provider/nl_BE/Text.php is over the maximum file size of 1000000 bytes.
+[Info  - 22:21:34] Indexing started.
+[Info  - 22:21:52] Indexing ended. 7127 files indexed in 17s.
+[Info  - 22:21:52] Writing state to /var/www/php73/tesis/~/.vscode-root/User/workspaceStorage/8ab273f5b9ffd7e21973f07daad12763/bmewburn.vscode-intelephense-client/71a71131.
+[Info  - 22:21:53] Wrote state in 1.2s.

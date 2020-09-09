@@ -18,7 +18,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        //\Pktharindu\NovaPermissions\Role::class => \App\Policies\RolePolicy::class,
+        \Pktharindu\NovaPermissions\Role::class => \App\Policies\RolePolicy::class,
     ];
 
     /**
