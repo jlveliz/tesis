@@ -1,7 +1,7 @@
 <template>
   <div>
-    <input :type="inputField" :id="id" :name="id" class="form-control form-input form-input-bordered w-full" required />
-    <button type="button" @click="switchVisibilityPassword">Ver clave</button>
+    <input :type="inputField" :id="id" v-model="model" :name="id" class="form-control form-input form-input-bordered w-full" required />
+    <button v-if="model" type="button" @click="switchVisibilityPassword"><span v-if="inputField == 'password'">Ver clave</span>  <span v-if="inputField == 'text'">Ocultar clave</span></button>
   </div>
 </template>
 
@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       inputField: "password",
+      model:""
     };
   },
   props: {
@@ -22,12 +23,20 @@ export default {
     switchVisibilityPassword() {
       this.inputField = this.inputField == "password" ? "text" : "password";
     },
-  },
-  mounted() {
-    console.log("Hola");
-  },
+  }
 };
 </script>
 
-<style>
+<style scoped>
+
+  button{
+    position: relative;
+    bottom: 26px;
+    color: #4099de;
+    font-weight: bold;
+    font-family: inherit;
+    float: right;
+    margin-right: 6px;
+    font-size: 15px;
+  }
 </style>

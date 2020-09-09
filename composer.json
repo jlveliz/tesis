@@ -17,6 +17,7 @@
         "laravel/nova": "*",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.2",
+        "laraveles/spanish": "^1.5",
         "opanegro/field-nova-password-show-hide": "^1.0",
         "pktharindu/nova-permissions": "^2.1"
     },
