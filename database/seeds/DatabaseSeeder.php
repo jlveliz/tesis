@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\SchoolPeriod;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RequirementSeeder::class);
         $this->call(CarrerSeeder::class);
         $this->call(ProjectTypeSeeder::class);
+        $this->call(SchoolPeriodSeeder::class);
     }
 }

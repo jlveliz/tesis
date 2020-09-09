@@ -19,6 +19,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         \Pktharindu\NovaPermissions\Role::class => \App\Policies\RolePolicy::class,
+        \App\Models\SchoolPeriod::class => \App\Policies\SchoolPeriodPolicy::class,
     ];
 
     /**
