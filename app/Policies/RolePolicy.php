@@ -4,7 +4,7 @@ namespace App\Policies;
 
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Pktharindu\NovaPermissions\Role;
+use App\Models\Role;
 
 class RolePolicy
 {
@@ -53,7 +53,7 @@ class RolePolicy
      */
     public function update(User $user, Role $role)
     {
-        return true;
+        return $role->is_lock == 0 && $user->role()->where('slug','!=','administrador');
     }
 
     /**

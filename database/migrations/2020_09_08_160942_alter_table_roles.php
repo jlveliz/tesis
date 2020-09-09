@@ -13,9 +13,13 @@ class AlterTableRoles extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('roles')) {
-            Schema::table('roles',function(Blueprint $table){
-                $table->boolean('is_lock')->after('name')->default(1);
+        if (!Schema::hasTable('roles')) {
+            Schema::create('roles', function (Blueprint $table) {
+                $table->id();
+                $table->string('name')->unique();
+                $table->string('slug')->unique();
+                $table->boolean('is_lock')->default(1);
+                $table->timestamps();
             });
         }
     }
@@ -27,6 +31,6 @@ class AlterTableRoles extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('roles');
     }
 }

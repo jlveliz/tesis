@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Pktharindu\NovaPermissions\Role;
+use App\Models\Role;
 use Illuminate\Support\Str;
 
 class RoleSeeder extends Seeder

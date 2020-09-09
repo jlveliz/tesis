@@ -18,6 +18,7 @@ class AlterTableUser extends Migration
                 $table->string('lastname')->nullable()->after('name');
                 $table->string('num_identification')->nullable()->unique()->after('lastname');
                 $table->boolean('allow_login')->default(1)->after('remember_token');
+                $table->integer('role_id');
             });
         }
     }
