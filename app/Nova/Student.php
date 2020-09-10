@@ -2,8 +2,11 @@
 
 namespace App\Nova;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\Hidden;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Student extends Resource
@@ -28,7 +31,7 @@ class Student extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name', 'lastname', 'email',
     ];
 
     /**
@@ -40,7 +43,31 @@ class Student extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            Text::make(__('Nombre'), 'name')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make(__('Apellido'), 'lastname')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Correo electrónico', 'email')
+                ->sortable()
+                ->rules('required', 'email', 'max:254')
+                ->creationRules('unique:users,email')
+                ->updateRules('unique:users,email,{{resourceId}}'),
+
+            Password::make('Clave', 'password')
+                ->onlyOnForms()
+                ->creationRules('required', 'string', 'min:8')
+                ->updateRules('nullable', 'string', 'min:8'),
+
+            Hidden::make('role_id')->default(function ($request) {
+                $role = Role::where('slug', 'estudiante')->first();
+                if ($role) {
+                    return $role->id;
+                }
+            })
         ];
     }
 
@@ -86,5 +113,15 @@ class Student extends Resource
     public function actions(Request $request)
     {
         return [];
+    }
+
+    public static function label()
+    {
+        return __('Estudiantes');
+    }
+
+    public static function singularLabel()
+    {
+        return __('Estudiante');
     }
 }

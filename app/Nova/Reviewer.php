@@ -4,26 +4,26 @@ namespace App\Nova;
 
 use App\Models\Role;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Gravatar;
-use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Hidden;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class User extends Resource
+class Reviewer extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\User::class;
+    public static $model = \App\Models\Reviewer::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -31,7 +31,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'email',
+        'name', 'lastname', 'email',
     ];
 
     /**
@@ -43,9 +43,6 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            
-            Gravatar::make()->maxWidth(50),
-
             Text::make(__('Nombre'), 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
@@ -60,13 +57,8 @@ class User extends Resource
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
-            Password::make('Clave', 'password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:8')
-                ->updateRules('nullable', 'string', 'min:8'),
-
             Hidden::make('role_id')->default(function ($request) {
-                $role = Role::where('slug', 'administrador')->first();
+                $role = Role::where('slug', 'revisores')->first();
                 if ($role) {
                     return $role->id;
                 }
@@ -120,11 +112,11 @@ class User extends Resource
 
     public static function label()
     {
-        return __('Administradores');
+        return __('Revisores');
     }
 
     public static function singularLabel()
     {
-        return __('Administrador');
+        return __('Revisor');
     }
 }
