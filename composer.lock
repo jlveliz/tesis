@@ -1304,7 +1304,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "4487bd94976fcb353263d9d3ed7f0a3eefebdf47",
+                "reference": "d8e7f1f1ffa2c4df6b01c34a8cdac202ce6425d0",
                 "shasum": null
             },
             "require": {

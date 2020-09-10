@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Gravatar;
@@ -9,6 +10,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Hidden;
 
 class User extends Resource
 {
@@ -44,26 +46,34 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
+            
             Gravatar::make()->maxWidth(50),
 
-            Text::make('Name')
+            Text::make(__('Nombre'), 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Email')
+            Text::make(__('Apellido'), 'lastname')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Correo electrónico', 'email')
                 ->sortable()
                 ->rules('required', 'email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
-            Password::make('Password')
+            Password::make('Clave', 'password')
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
-            
-            BelongsTo::make('Role', 'role')->sortable()->searchable(),
+
+            Hidden::make('role_id')->default(function ($request) {
+                $role = Role::where('slug', 'administrador')->first();
+                if ($role) {
+                    return $role->id;
+                }
+            })
         ];
     }
 
@@ -113,11 +123,11 @@ class User extends Resource
 
     public static function label()
     {
-        return __('Usuarios');
+        return __('Administradores');
     }
 
     public static function singularLabel()
     {
-        return __('Usuario');   
+        return __('Administrador');
     }
 }

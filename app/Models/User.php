@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -41,5 +42,17 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::class, 'role_id');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        $roleId = Role::where('slug', 'administrador')->first();
+        if ($roleId) {
+            static::addGlobalScope('roles', function (Builder $builder) use ($roleId) {
+                return $builder->where('role_id', '=', $roleId->id);
+            });
+        }
     }
 }

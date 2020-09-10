@@ -3,10 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
-
-
-class Student extends User
+class Student extends Model
 {
 
     protected $table = "users";
@@ -16,14 +15,11 @@ class Student extends User
     {
         parent::boot();
 
-        static::addGlobalScope('roles', function (Builder $builder) {
-            return $builder->whereHas('roles', function (Builder $query) {
-                $query->where('slug','administrador');
+        $roleId = Role::where('slug', 'estudiante')->first();
+        if ($roleId) {
+            static::addGlobalScope('roles', function (Builder $builder) use ($roleId) {
+                return $builder->where('role_id', '=', $roleId->id);
             });
-        });
+        }
     }
-
-
-
-    
 }
